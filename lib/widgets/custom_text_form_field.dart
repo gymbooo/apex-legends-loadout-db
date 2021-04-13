@@ -34,8 +34,6 @@ class CustomTextFormField extends StatefulWidget {
 }
 
 class _CustomTextFormFieldState extends State<CustomTextFormField> {
-  bool _isEmpty = false;
-
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -55,7 +53,8 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
           ),
           SizedBox(
             width: widget.width,
-            height: _isEmpty ? 58 : 36,
+            // height: _isEmpty ? 58 : 36,
+            height: 58,
             child: TextFormField(
               maxLines: 1,
               keyboardType: widget.isNumberField
@@ -70,17 +69,16 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
                     : FilteringTextInputFormatter.allow(RegExp(r'.*')),
               ],
               controller: widget.controller,
-
               validator: (value) {
-                if (value.isEmpty) {
-                  setState(() {
-                    _isEmpty = true;
-                  });
+                if (value == null || value.isEmpty) {
+                  // setState(() {
+                  //   _isEmpty = true;
+                  // });
                   return '*${widget.placeholder} is Required';
                 }
-                setState(() {
-                  _isEmpty = false;
-                });
+                // setState(() {
+                //   _isEmpty = false;
+                // });
                 return null;
               },
               // decoration properties

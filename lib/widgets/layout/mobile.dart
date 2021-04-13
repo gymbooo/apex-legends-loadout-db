@@ -49,6 +49,7 @@ class _LayoutMobileState extends State<LayoutMobile> {
         final listOfWeaponTypesProvider = watch(listOfWeaponTypesCNP);
         final listOfAmmoTypeProvider = watch(listOfAmmoTypeCNP);
         final listOfFireModeProvider = watch(listOfFireModeCNP);
+        final listOfWeaponIdsProvider = watch(listOfWeaponIdsCNP);
         final weaponProvider = watch(weaponCNP);
         return Scaffold(
           appBar: AppBar(
@@ -68,6 +69,19 @@ class _LayoutMobileState extends State<LayoutMobile> {
                   await listOfWeaponTypesProvider.getListOfWeaponTypes();
                   await listOfAmmoTypeProvider.getListOfAmmoType();
                   await listOfFireModeProvider.getListOfFireMode();
+                  await listOfWeaponIdsProvider.getListOfWeaponIds();
+                  // print(listOfWeaponIdsProvider.listOfWeaponIds
+                  //     .elementAt(
+                  //         listOfWeaponIdsProvider.listOfWeaponIds.length - 1)
+                  //     .id);
+                  String weaponId = (int.parse(listOfWeaponIdsProvider
+                              .listOfWeaponIds
+                              .elementAt(listOfWeaponIdsProvider
+                                      .listOfWeaponIds.length -
+                                  1)
+                              .id) +
+                          1)
+                      .toString();
 
                   weaponProvider.clearForm();
                   weaponProvider.setWeaponTypeName(weaponTypeName: 'Pistol');
@@ -76,6 +90,7 @@ class _LayoutMobileState extends State<LayoutMobile> {
                   weaponProvider.setAmmoTypeId(ammoTypeId: '1');
                   weaponProvider.setFireMode(fireMode: 'Single');
                   weaponProvider.setFireModeId(fireModeId: '1');
+                  weaponProvider.setWeaponID(weaponID: weaponId);
 
                   Navigator.push(
                     context,

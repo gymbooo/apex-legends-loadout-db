@@ -6,3 +6,4 @@ export 'weapon_provider.dart';
 export 'list_of_ammo_types_provider.dart';
 export 'list_of_fire_modes_provider.dart';
 export 'drop_down_field_provider.dart';
+export 'list_of_weapon_ids_provider.dart';

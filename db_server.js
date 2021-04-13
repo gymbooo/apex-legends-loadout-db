@@ -51,7 +51,7 @@ module.exports = {
   ],
   weapons: [
     {
-      id: "11",
+      id: "1",
       gun_id: "1",
       weapon_name: "RE-45 Auto",
       description: "Full-auto pistol",
@@ -68,7 +68,7 @@ module.exports = {
       is_supply_drop_weapon: false,
     },
     {
-      id: "12",
+      id: "2",
       gun_id: "1",
       weapon_name: "P2020",
       description: "Semi-auto pistol",
@@ -85,7 +85,7 @@ module.exports = {
       is_supply_drop_weapon: false,
     },
     {
-      id: "21",
+      id: "3",
       gun_id: "2",
       weapon_name: "EVA-8 Auto",
       description: "Full-auto shotgun",
@@ -102,7 +102,7 @@ module.exports = {
       is_supply_drop_weapon: false,
     },
     {
-      id: "22",
+      id: "4",
       gun_id: "2",
       weapon_name: "Mastiff Shotgun",
       description: "Powerful semi-auto shotgun",
@@ -119,7 +119,7 @@ module.exports = {
       is_supply_drop_weapon: false,
     },
     {
-      id: "31",
+      id: "5",
       gun_id: "3",
       weapon_name: "Prowler Burst PDW",
       description: "5-round burst SMG",
@@ -136,7 +136,7 @@ module.exports = {
       is_supply_drop_weapon: true,
     },
     {
-      id: "32",
+      id: "6",
       gun_id: "3",
       weapon_name: "Volt SMG",
       description: "Energy actuated SMG",
@@ -153,7 +153,7 @@ module.exports = {
       is_supply_drop_weapon: false,
     },
     {
-      id: "41",
+      id: "7",
       gun_id: "4",
       weapon_name: "M600 Spitfire",
       description: "Full-auto LMG",
@@ -170,7 +170,7 @@ module.exports = {
       is_supply_drop_weapon: false,
     },
     {
-      id: "42",
+      id: "8",
       gun_id: "4",
       weapon_name: "Devotion LMG",
       description: "Full-auto energy LMG",
@@ -187,7 +187,7 @@ module.exports = {
       is_supply_drop_weapon: false,
     },
     {
-      id: "51",
+      id: "9",
       gun_id: "5",
       weapon_name: "30-30 Repeater",
       description: "Semi-auto heavy repeater",
@@ -204,7 +204,7 @@ module.exports = {
       is_supply_drop_weapon: false,
     },
     {
-      id: "52",
+      id: "10",
       gun_id: "5",
       weapon_name: "R-301 Carbine",
       description: "Full-auto with high accuracy",
@@ -221,7 +221,7 @@ module.exports = {
       is_supply_drop_weapon: false,
     },
     {
-      id: "61",
+      id: "11",
       gun_id: "6",
       weapon_name: "Kraber .50-Cal Sniper",
       description: "Powerful bolt-action sniper",
@@ -238,7 +238,7 @@ module.exports = {
       is_supply_drop_weapon: true,
     },
     {
-      id: "62",
+      id: "12",
       gun_id: "6",
       weapon_name: "Triple Take",
       description: "Triple-barrel sniper",

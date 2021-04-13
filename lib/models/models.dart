@@ -116,3 +116,17 @@ class FireMode {
     );
   }
 }
+
+class WeaponId {
+  String id;
+
+  WeaponId({
+    @required this.id,
+  });
+
+  factory WeaponId.fromJson(dynamic json) {
+    return WeaponId(
+      id: json['id'] as String,
+    );
+  }
+}

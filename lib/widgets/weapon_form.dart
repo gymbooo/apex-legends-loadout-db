@@ -180,7 +180,7 @@ class _WeaponFormState extends State<WeaponForm> {
                   children: [
                     Form(
                       key: _formKey,
-                      autovalidateMode: AutovalidateMode.onUserInteraction,
+                      // autovalidateMode: AutovalidateMode.onUserInteraction,
                       child: Column(
                         children: [
                           CustomTextFormField(

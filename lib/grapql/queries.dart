@@ -85,3 +85,11 @@ query FireMode($id:ID!) {
   }
 }
 ''';
+
+const String getWeaponIdsQuery = r'''
+query allWeapons{
+  allWeapons{
+    id
+  }
+}
+''';

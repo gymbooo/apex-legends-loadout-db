@@ -24,6 +24,7 @@ class _ViewListOfWeaponsOfThisTypePageState
         final listOfWeaponTypesProvider = watch(listOfWeaponTypesCNP);
         final listOfAmmoTypeProvider = watch(listOfAmmoTypeCNP);
         final listOfFireModeProvider = watch(listOfFireModeCNP);
+        final listOfWeaponIdsProvider = watch(listOfWeaponIdsCNP);
         final weaponProvider = watch(weaponCNP);
         final title = listOfWeaponsOfThisTypeProvider.weaponTypeName;
         return Scaffold(
@@ -51,11 +52,20 @@ class _ViewListOfWeaponsOfThisTypePageState
                   await listOfWeaponTypesProvider.getListOfWeaponTypes();
                   await listOfAmmoTypeProvider.getListOfAmmoType();
                   await listOfFireModeProvider.getListOfFireMode();
+                  await listOfWeaponIdsProvider.getListOfWeaponIds();
                   List<String> _weaponTypeList = [];
                   listOfWeaponTypesProvider.listofWeaponTypes
                       .forEach((element) {
                     _weaponTypeList.add(element.gunType);
                   });
+                  String weaponId = (int.parse(listOfWeaponIdsProvider
+                              .listOfWeaponIds
+                              .elementAt(listOfWeaponIdsProvider
+                                      .listOfWeaponIds.length -
+                                  1)
+                              .id) +
+                          1)
+                      .toString();
                   weaponProvider.clearForm();
 
                   weaponProvider.setWeaponTypeName(
@@ -74,6 +84,7 @@ class _ViewListOfWeaponsOfThisTypePageState
                           : '1');
                   weaponProvider.setFireMode(fireMode: 'Single');
                   weaponProvider.setFireModeId(fireModeId: '1');
+                  weaponProvider.setWeaponID(weaponID: weaponId);
 
                   Navigator.push(
                     context,
