@@ -12,6 +12,7 @@ class _EditWeaponPageState extends State<EditWeaponPage> {
     return WeaponForm(
       type: 'edit',
       title: 'Edit Weapon',
+      fromHomePage: false,
     );
   }
 }

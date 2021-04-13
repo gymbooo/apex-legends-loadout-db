@@ -8,11 +8,13 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 class WeaponForm extends StatefulWidget {
   final String type;
   final String title;
+  final bool fromHomePage;
 
   const WeaponForm({
     Key key,
     this.type = 'register',
     this.title,
+    this.fromHomePage = false,
   }) : super(key: key);
   @override
   _WeaponFormState createState() => _WeaponFormState();
@@ -64,7 +66,16 @@ class _WeaponFormState extends State<WeaponForm> {
                     Navigator.pushReplacementNamed(
                         context, ViewListOfWeaponsOfThisTypeRoute);
                   } else if (widget.type.contains('register')) {
-                    Navigator.pushReplacementNamed(context, LayoutWidgetRoute);
+                    if (widget.fromHomePage) {
+                      Navigator.pushReplacementNamed(
+                          context, LayoutWidgetRoute);
+                    } else {
+                      listOfThisWeaponTypeProvider.clearAll();
+                      await listOfThisWeaponTypeProvider.getWeaponsOfThisType(
+                          id: listOfWeaponTypesProvider.gunId);
+                      Navigator.pushReplacementNamed(
+                          context, ViewListOfWeaponsOfThisTypeRoute);
+                    }
                   }
                 },
               ),
@@ -233,7 +244,17 @@ class _WeaponFormState extends State<WeaponForm> {
                                   ammoTypeId: (_ammoTypeList.indexOf(val) + 1)
                                       .toString());
 
-                              print(weaponProvider.ammoTypeId);
+                              if (val.contains('Shotgun Shells')) {
+                                setState(() {
+                                  weaponProvider.setWeaponTypeName(
+                                      weaponTypeName: 'Shotgun');
+                                  weaponProvider.setWeaponType(
+                                      weaponType:
+                                          (_weaponTypeList.indexOf('Shotgun') +
+                                                  1)
+                                              .toString());
+                                });
+                              }
                             },
                           ),
                           CustomDropDown(

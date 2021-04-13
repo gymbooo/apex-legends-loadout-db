@@ -95,7 +95,9 @@ class _LayoutMobileState extends State<LayoutMobile> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => RegisterWeaponPage()),
+                        builder: (context) => RegisterWeaponPage(
+                              fromHomePage: true,
+                            )),
                   );
                 },
               ),

@@ -80,7 +80,7 @@ class _ViewListOfWeaponsOfThisTypePageState
                           : 'Light Rounds');
                   weaponProvider.setAmmoTypeId(
                       ammoTypeId: listOfWeaponTypesProvider.gunId.contains('2')
-                          ? '2'
+                          ? '3'
                           : '1');
                   weaponProvider.setFireMode(fireMode: 'Single');
                   weaponProvider.setFireModeId(fireModeId: '1');
@@ -89,7 +89,9 @@ class _ViewListOfWeaponsOfThisTypePageState
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => RegisterWeaponPage()),
+                        builder: (context) => RegisterWeaponPage(
+                              fromHomePage: false,
+                            )),
                   );
                 },
               ),
