@@ -28,7 +28,6 @@ class _WeaponFormState extends State<WeaponForm> {
         final listOfWeaponTypesProvider = watch(listOfWeaponTypesCNP);
         final listOfAmmoTypeProvider = watch(listOfAmmoTypeCNP);
         final listOfFireModeProvider = watch(listOfFireModeCNP);
-        // final dropDownFieldProvider = watch(dropDownFieldCNP);
         final listOfThisWeaponTypeProvider = watch(listOfWeaponsOfThisTypeCNP);
         final weaponProvider = watch(weaponCNP);
         List<String> _ammoTypeList = [];
@@ -58,12 +57,6 @@ class _WeaponFormState extends State<WeaponForm> {
                   color: white,
                 ),
                 onPressed: () async {
-                  // if (dropDownFieldProvider.isDropdownOpened) {
-                  //   dropDownFieldProvider.floatingDropdown.remove();
-                  //   dropDownFieldProvider.updateDropDown(
-                  //       status: !dropDownFieldProvider.isDropdownOpened);
-                  // }
-                  // Navigator.pop(context);
                   if (widget.type.contains('edit')) {
                     listOfThisWeaponTypeProvider.clearAll();
                     await listOfThisWeaponTypeProvider.getWeaponsOfThisType(
@@ -71,14 +64,6 @@ class _WeaponFormState extends State<WeaponForm> {
                     Navigator.pushReplacementNamed(
                         context, ViewListOfWeaponsOfThisTypeRoute);
                   } else if (widget.type.contains('register')) {
-                    // await listOfWeaponTypesProvider.getListOfWeaponTypes();
-                    // await listOfAmmoTypeProvider.getListOfAmmoType();
-                    // await listOfFireModeProvider.getListOfFireMode();
-                    // await listOfWeaponTypesProvider.getListOfWeaponTypes();
-                    // listOfThisWeaponTypeProvider.clearAll();
-                    // await listOfThisWeaponTypeProvider.getWeaponsOfThisType(
-                    //     id: listOfWeaponTypesProvider.gunId);
-                    // Navigator.pop(context);
                     Navigator.pushReplacementNamed(context, LayoutWidgetRoute);
                   }
                 },
@@ -111,8 +96,6 @@ class _WeaponFormState extends State<WeaponForm> {
                               ? 'Would you like to register this gun?'
                               : 'Would you like to make changes to this gun?',
                           headerColor: Colors.grey,
-                          subHeaderOne: '',
-                          subHeaderTwo: '',
                           secondaryButtonText: 'No',
                           secondaryFunction: () {},
                           primaryButtonText: 'Yes',
@@ -152,8 +135,6 @@ class _WeaponFormState extends State<WeaponForm> {
                                         ? '${weaponProvider.weaponName.text} successfully registered!'
                                         : '${weaponProvider.weaponName.text} edited!',
                                     headerColor: Colors.grey,
-                                    subHeaderOne: '',
-                                    subHeaderTwo: '',
                                     secondaryFunction: () {},
                                     primaryButtonText: 'Got it',
                                     primaryFunction: () {},

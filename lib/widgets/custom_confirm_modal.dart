@@ -35,7 +35,7 @@ class CustomConfirmModal extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
         ),
         width: 441,
-        height: 345,
+        height: subHeaderOne != null ? 345 : 300,
         child: Column(
           mainAxisAlignment: secondaryButtonText != null
               ? MainAxisAlignment.spaceBetween
@@ -48,17 +48,18 @@ class CustomConfirmModal extends StatelessWidget {
                   height: 98,
                   padding: EdgeInsets.only(bottom: 20),
                   child: icon.contains('positive')
-                      ? Image.network(
-                          'https://static.wikia.nocookie.net/apexlegends_gamepedia_en/images/9/9f/Holo-Spray_Octane_Boo-Yah.png/revision/latest/scale-to-width-down/512?cb=20201113165515',
+                      ? Image(
+                          image: AssetImage('lib/assets/images/octane.png'),
                           width: 200,
                         )
                       : icon.contains('negative')
-                          ? Image.network(
-                              'https://static.wikia.nocookie.net/apexlegends_gamepedia_en/images/9/9f/Holo-Spray_Pathfinder_Oh_No.png/revision/latest/scale-to-width-down/512?cb=20201113165508',
+                          ? Image(
+                              image: AssetImage('lib/assets/images/pathy.png'),
                               width: 200,
                             )
-                          : Image.network(
-                              'https://static.wikia.nocookie.net/apexlegends_gamepedia_en/images/3/37/Holo-Spray_Horizon_Event_Horizon.png/revision/latest/scale-to-width-down/512?cb=20201113161145',
+                          : Image(
+                              image:
+                                  AssetImage('lib/assets/images/horizon.png'),
                               width: 200,
                             ),
                 ),
@@ -71,19 +72,25 @@ class CustomConfirmModal extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 14),
-                Text(subHeaderOne,
+                if (subHeaderOne != null)
+                  Text(
+                    subHeaderOne,
                     style: TextStyle(
                       fontSize: 12,
                       color: Color(0xffa3a4a5),
                       fontFamily: 'Barlow-Regular',
-                    )),
+                    ),
+                  ),
                 SizedBox(height: 7),
-                Text(subHeaderTwo,
+                if (subHeaderTwo != null)
+                  Text(
+                    subHeaderTwo,
                     style: TextStyle(
                       fontSize: 12,
                       color: Color(0xffa3a4a5),
                       fontFamily: 'Barlow-Regular',
-                    )),
+                    ),
+                  ),
               ],
             ),
             Container(

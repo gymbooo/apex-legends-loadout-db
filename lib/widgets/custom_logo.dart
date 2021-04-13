@@ -12,8 +12,8 @@ class CustomLogo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Image.network(
-          'https://i.redd.it/1kxnu79d9q841.png',
+        Image(
+          image: AssetImage('lib/assets/images/apex_legends_logo_white.png'),
           width: 70,
         ),
         SizedBox(width: 10),
